@@ -12,12 +12,12 @@ GPIO.setup(sensor, GPIO.IN, GPIO.PUD_UP)
 def my_callback(channel)
     if (GPIO.input(sensor)):
         print("Toilet is vacant")
-        firebase.post('/state', {'state':'Toilet is vacant'}) # Post data to new key state
-        firebase.put('state', 'state', 'Toilet is vacant')    # Add data to key state
+        firebase.post('/door', {'state':'Toilet is vacant'}) # Post data to new key state
+        firebase.put('door', 'state', 'Toilet is vacant')    # Add data to key state
     else:
         print("Toilet is occupied")
-        firebase.post('/state', {'state':'Toilet is occupied'}) # Post data to new key state
-        firebase.put('state', 'state', 'Toilet is occupied')    # Add data to key state
+        firebase.post('/door', {'state':'Toilet is occupied'}) # Post data to new key state
+        firebase.put('door', 'state', 'Toilet is occupied')    # Add data to key state
 
 GPIO.add_event_detect(sensor, GPIO.BOTH, callback = my_callback, bounctime=500)
 

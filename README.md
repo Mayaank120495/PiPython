@@ -1,6 +1,6 @@
-How to install python 3 in ubuntu and make it as default
+<h1>How to install python 3 in ubuntu and make it as default</h1>
 
-sudo apt-get update
+sudo apt-get update <br>
 sudo apt-get install python3
 
 Now if you have to make python3 as default python version

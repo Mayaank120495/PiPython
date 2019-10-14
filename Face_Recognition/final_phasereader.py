@@ -3,7 +3,7 @@ import cv2
 import os
 import RPi.GPIO as GPIO
 import time
-import datetime 
+import datetime
 from time import sleep
 
 # Define GPIO to LCD mapping
@@ -237,9 +237,10 @@ def lcd():
 	# Initialise display
 	lcd_init()
      
+    today = datetime.datetime.now().strftime('%b %d  %H:%M:%S\n') 
 	while True:
     	lcd_string("Face Detector",LCD_LINE_1)
-    	lcd_string(datetime.datetime.now(),LCD_LINE_2)
+    	lcd_string(today,LCD_LINE_2)
  
 	sleep(3)
 
